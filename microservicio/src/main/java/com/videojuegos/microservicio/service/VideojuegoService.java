@@ -30,4 +30,8 @@ public class VideojuegoService {
     public void actualizar(String old, String newName){
         repository.modificarJuego(old, newName);
     }
+
+    public String buscarPorNombre(String name){
+        return repository.buscarJuegoPorNombre(name);
+    }
 }

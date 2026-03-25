@@ -54,4 +54,10 @@ public class VideojuegoController {
         return "Juego Modificado";
     }
 
+    @GetMapping("/buscar/{name}")
+    public String buscarPorNombre(@PathVariable String name) {
+        return Service.buscarPorNombre(name);
+    }
+    
+
 }

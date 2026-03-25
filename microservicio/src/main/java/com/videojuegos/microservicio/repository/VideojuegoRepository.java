@@ -35,4 +35,11 @@ public class VideojuegoRepository {
             juegos.set(index, newName);
         }
     }
+
+    public String buscarJuegoPorNombre(String name){
+        if (juegos.contains(name)) {
+            return name;
+        }
+        return "No tá ese juego :(";
+    }
 }
