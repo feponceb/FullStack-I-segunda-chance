@@ -20,4 +20,8 @@ public class VideojuegoRepository {
     public List<String> obtenerJuegos(){
         return juegos;
     }
+
+    public void agregarJuego(String name){
+        juegos.add(name);
+    }
 }

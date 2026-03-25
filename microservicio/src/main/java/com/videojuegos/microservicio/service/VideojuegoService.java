@@ -18,4 +18,8 @@ public class VideojuegoService {
     public List<String> Listar(){
         return repository.obtenerJuegos();
     }
+
+    public void agregar(String name){
+        repository.agregarJuego(name);
+    }
 }
