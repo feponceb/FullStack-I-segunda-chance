@@ -22,4 +22,8 @@ public class VideojuegoService {
     public void agregar(String name){
         repository.agregarJuego(name);
     }
+
+    public void eliminar(String name){
+        repository.eliminarJuego(name);
+    }
 }

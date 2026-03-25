@@ -7,7 +7,9 @@ import com.videojuegos.microservicio.service.VideojuegoService;
 
 import java.util.List;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -33,6 +35,12 @@ public class VideojuegoController {
         String name = body.get("name");
         Service.agregar(name);
         return "Juego Agregado";
+    }
+
+    @DeleteMapping("/eliminar/{name}")
+    public String eliminar(@PathVariable String name){
+        Service.eliminar(name);
+        return "Juego eliminado :(";
     }
     
 

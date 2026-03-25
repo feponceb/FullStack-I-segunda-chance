@@ -24,4 +24,8 @@ public class VideojuegoRepository {
     public void agregarJuego(String name){
         juegos.add(name);
     }
+
+    public void eliminarJuego(String name){
+        juegos.remove(name);
+    }
 }
