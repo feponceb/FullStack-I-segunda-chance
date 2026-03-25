@@ -28,4 +28,11 @@ public class VideojuegoRepository {
     public void eliminarJuego(String name){
         juegos.remove(name);
     }
+
+    public void modificarJuego(String old, String newName){
+        int index = juegos.indexOf(old);
+        if (index != -1) {
+            juegos.set(index, newName);
+        }
+    }
 }

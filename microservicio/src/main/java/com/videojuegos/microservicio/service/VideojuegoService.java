@@ -26,4 +26,8 @@ public class VideojuegoService {
     public void eliminar(String name){
         repository.eliminarJuego(name);
     }
+
+    public void actualizar(String old, String newName){
+        repository.modificarJuego(old, newName);
+    }
 }
