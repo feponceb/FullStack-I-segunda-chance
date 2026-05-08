@@ -2,6 +2,7 @@ package com.clientes.personas.controller;
 
 import java.util.List;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,6 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.clientes.personas.model.Pelicula;
 import com.clientes.personas.model.Persona;
 import com.clientes.personas.service.PersonaService;
+
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/personas")
@@ -24,9 +27,15 @@ public class PersonaController {
     }
 
     //agregar persona
+    //update de "agregar" utiliznado ResponseEntity
     @PostMapping("/agregar")
-    public Persona crearPersona(@RequestBody Persona persona){
-        return service.guardarPersona(persona);
+    public ResponseEntity<Persona> crearPersona(@Valid @RequestBody Persona persona){
+
+        //guardar la persona en la BD
+        Persona nueva = service.guardarPersona(persona);
+
+        //Retorna codigo de creacion correcta 201 junto al objeto que se creó
+        return ResponseEntity.status(201).body(nueva);
     }
 
     //listar personas
